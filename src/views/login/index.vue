@@ -10,12 +10,16 @@
             clearable
             border
             placeholder="请输入账号"
+            v-line:bottom
+            class="content"
           />
 
           <van-field
             v-model="password"
             type="password"
             placeholder="请输入密码"
+            v-line:bottom
+            class="content"
           />
 
       </van-col>
@@ -31,6 +35,7 @@
 
 <script>
 import { Button, Row, Col, Field, Divider, CellGroup } from 'vant'
+import line from '@/directive/line'
 
 export default {
   components: {
@@ -42,6 +47,9 @@ export default {
     [CellGroup.name]: CellGroup
   },
   name: 'Login',
+  directives: {
+    line: line
+  },
   data() {
     return {
       value: '',
@@ -56,6 +64,10 @@ export default {
     font-size: 60px;
     margin-top: 4rem;
     margin-bottom: 8rem;
+  }
+  .content{
+    line-height: 40px;
+    font-size: 40px;
   }
 }
 </style>

@@ -1,9 +1,9 @@
 const path = require('path')
-const autoprefixer = require('autoprefixer');
-const pxtorem = require('postcss-pxtorem');
+const autoprefixer = require('autoprefixer')
+const pxtorem = require('postcss-pxtorem')
 
-function resolve(dir){
-  return path.join(__dirname,dir)
+function resolve(dir) {
+  return path.join(__dirname, dir)
 }
 
 module.exports = {
@@ -22,10 +22,10 @@ module.exports = {
       }
     }
   },
-  configureWebpack: config=>{
+  configureWebpack: config => {
     config.name = '毛竹实施系统'
     config.resolve.alias = {
       '@': resolve('src')
     }
   }
-};
+}

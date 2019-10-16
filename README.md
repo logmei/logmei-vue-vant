@@ -1,4 +1,4 @@
-# xyy-saas-crm-vue-app
+# vue-app
 
 ## Project setup
 ```

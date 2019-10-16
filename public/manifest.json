@@ -1,6 +1,6 @@
 {
-  "name": "xyy-saas-crm-vue-app",
-  "short_name": "xyy-saas-crm-vue-app",
+  "name": "vue-app",
+  "short_name": "vue-app",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
