@@ -16,11 +16,15 @@
 
           <van-field
             v-model="password"
-            type="password"
+            :type="passwordShow?'text':'password'"
             placeholder="请输入密码"
-            right-icon="closed-eye"
             class="content password-class"
-          />
+          >
+          <template v-slot:right-icon>
+             <svg-icon :icon-class="passwordShow?'view':'close-eye'" @click="passwordShow=!passwordShow"></svg-icon>
+          </template>
+
+          </van-field>
 
       </van-col>
     </van-row>
@@ -61,7 +65,8 @@ export default {
   data() {
     return {
       username: '',
-      password: ''
+      password: '',
+      passwordShow: false
     }
   },
   computed: {
