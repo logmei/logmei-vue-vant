@@ -10,6 +10,11 @@ export const constantRoutes = [
     component: () => import('@/views/login')
   },
   {
+    path: '/home',
+    name: 'home',
+    component: () => import('@/views/Home.vue')
+  },
+  {
     path: '/auth-redirect',
     component: () => import('@/views/login/auth-redirect'),
     hidden: true

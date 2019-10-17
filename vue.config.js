@@ -7,8 +7,25 @@ function resolve(dir) {
 }
 
 module.exports = {
-  outputDir: 'docs',
-  publicPath: process.env.NODE_ENV === 'production' ? '/vant-demo/' : '/',
+  outputDir: 'dist',
+  publicPath: '/',
+  devServer: {
+    port: 9527,
+    open: false,
+    overlay: {
+      warnings: false,
+      errors: true
+    },
+    proxy: {
+      [process.env.VUE_APP_BASE_API]: {
+        target: process.env.VUE_APP_URL,
+        changeOrigin: true,
+        pathRewrite: {
+          [process.env.VUE_APP_BASE_API]: ''
+        }
+      }
+    }
+  },
   css: {
     loaderOptions: {
       postcss: {

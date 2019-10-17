@@ -1,42 +1,27 @@
 <template>
   <div>
-    
-     <van-row>
-      <van-col offset="2" class="title">欢迎来到CRM</van-col>
-    </van-row>
-    <van-row>
-      <van-col>
-        <van-field v-model="value" placeholder="请输入账号" />
-        <van-field
-          v-model="password"
-          type="password"
-          placeholder="请输入密码"
-        />
-      </van-col>
-    </van-row>
-    <van-row>
-      <van-button type="primary">默认按钮</van-button>
-    </van-row>
+
+     欢迎
   </div>
 </template>
 
 <script>
-import {  Button, Row, Col,Field } from 'vant';
+import { Button, Row, Col, Field } from 'vant'
 
 export default {
   components: {
     [Button.name]: Button,
-    [Row.name]:Row,
-    [Col.name]:Col,
-    [Field.name]:Field
+    [Row.name]: Row,
+    [Col.name]: Col,
+    [Field.name]: Field
   },
-  data(){
+  data() {
     return {
-      value:'',
-      password:''
+      value: '',
+      password: ''
     }
   }
- 
-};
+
+}
 </script>
 
