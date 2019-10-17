@@ -4,15 +4,14 @@
       <van-col offset="2" class="title">欢迎使用移动端demo</van-col>
     </van-row>
     <van-row>
-      <van-col offset="2" span="22">
+      <van-col offset="1" span="22">
           <van-field
             v-model="username"
             clearable
             border
             placeholder="请输入账号"
-            v-line:bottom
             class="content"
-            style="margin-bottom: 1rem;"
+            style="margin-bottom: 0.5rem;"
           />
 
           <van-field
@@ -20,8 +19,7 @@
             type="password"
             placeholder="请输入密码"
             right-icon="closed-eye"
-            v-line:bottom
-            class="content password"
+            class="content password-class"
           />
 
       </van-col>
@@ -47,7 +45,6 @@
 
 <script>
 import { Button, Row, Col, Field, Divider, CellGroup } from 'vant'
-import line from '@/directive/line'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -61,9 +58,6 @@ export default {
     [CellGroup.name]: CellGroup
   },
   name: 'Login',
-  directives: {
-    line: line
-  },
   data() {
     return {
       username: '',
@@ -92,43 +86,60 @@ export default {
 <style lang="less" scoped>
 .login /deep/{
   .title{
-    font-size: 60px;
-    margin-top: 4rem;
-    margin-bottom: 8rem;
+    font-size: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 3.5rem;
   }
   .content{
-    line-height: 2.5rem;
-    font-size: 1rem;
+    line-height: 1.2rem;
+    font-size: 0.48rem;
     font-weight: 400;
   }
   .forgetPwd{
     color: #949496;
-    margin-right: 60px;
-    margin-top: 60px;
-    margin-bottom: 3rem;
+    margin-right: 1.1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1.3rem;
     font-weight: 500;
+    font-size: 0.4rem;
   }
   .button{
     width: 100%;
-    height: 2.5rem;
-    letter-spacing: 1rem;
-    font-weight: 600;
-    font-size: 1rem;
+    height: 1.2rem;
+    letter-spacing: 0.8rem;
+    /* font-weight: 600; */
+    font-size: 0.54rem;
+    .van-button__text{
+      margin-left: 20px;
+    }
   }
   .agreement{
-    margin-top:2rem;
-    font-size: 1rem;
+    margin-top:0.5rem;
+    font-size: 0.4rem;
     color: #949496;
     span{
       color: #3ca1d4
     }
   }
-  .password{
-    .van-field__right-icon .van-icon{
-      margin-right: 10px;
-      font-size: 1.4rem
-    }
+  .van-cell::after{
+    position: absolute;
+    box-sizing: border-box;
+    content: ' ';
+    pointer-events: none;
+    right: 0;
+    bottom: 0;
+    left: 0.42667rem;
+    border-bottom: 0.02667rem solid #ebedf0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
   }
+
 }
 </style>
-
+<style lang="less">
+ .password-class{
+    .van-icon{
+      font-size:0.5rem
+    }
+  }
+</style>
