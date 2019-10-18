@@ -9,6 +9,7 @@
             v-model="username"
             clearable
             border
+            v-fieldTip="'账号'"
             placeholder="请输入账号"
             class="content"
             style="margin-bottom: 0.5rem;"
@@ -16,6 +17,7 @@
 
           <van-field
             v-model="password"
+            v-fieldTip="'密码'"
             :type="passwordShow?'text':'password'"
             placeholder="请输入密码"
             class="content password-class"
@@ -49,6 +51,7 @@
 
 <script>
 import { Button, Row, Col, Field, Divider, CellGroup } from 'vant'
+import FieldTip from '@/directive/field-focus-tip'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
@@ -60,6 +63,9 @@ export default {
     [Field.name]: Field,
     [Divider.name]: Divider,
     [CellGroup.name]: CellGroup
+  },
+  directives: {
+    FieldTip
   },
   name: 'Login',
   data() {
