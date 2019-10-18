@@ -40,7 +40,7 @@ module.exports = {
     }
   },
   configureWebpack: config => {
-    config.name = '毛竹实施系统'
+    config.name = '{{description}}'
     config.resolve.alias = {
       '@': resolve('src')
     }
