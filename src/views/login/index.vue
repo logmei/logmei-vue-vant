@@ -51,7 +51,7 @@
 
 <script>
 import { Button, Row, Col, Field, Divider, CellGroup } from 'vant'
-import FieldTip from '@/directive/field-focus-tip'
+import { FieldTip } from 'vant-plus'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
