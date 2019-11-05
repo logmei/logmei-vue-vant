@@ -1,5 +1,5 @@
 # vue-app
-
+> 带有登录，list列表页和交互模板
 ## Project setup
 ```
 npm install

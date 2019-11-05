@@ -6,6 +6,7 @@ import 'amfe-flexible'
 import './icons'
 import './registerServiceWorker'
 import './router/permission.js'
+import 'vant-plus/lib/vant-plus.css'
 
 Vue.config.productionTip = false
 new Vue({

@@ -15,6 +15,11 @@ export const constantRoutes = [
     component: () => import('@/views/Home.vue')
   },
   {
+    path: '/workOrders',
+    name: 'workOrders',
+    component: () => import('@/views/work-orders')
+  },
+  {
     path: '/auth-redirect',
     component: () => import('@/views/login/auth-redirect'),
     hidden: true
