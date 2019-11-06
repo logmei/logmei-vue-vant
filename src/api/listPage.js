@@ -16,7 +16,7 @@ export function searchList(params) {
   })
 }
 
-export function searchListObj(params) {
+export function ListObj(params) {
   console.log('searchListObj', params)
   return new Promise(resolve => {
     resolve({

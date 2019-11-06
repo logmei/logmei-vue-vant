@@ -7,29 +7,38 @@
   left-arrow
 
 >
-  <van-icon name="search" slot="right" />
+  <van-icon name="search" slot="right" @click="visible=true"/>
 </van-nav-bar>
 </van-sticky>
 
   <vlp-list
-  :interface-fun="searchList"
+  :interface-fun="listInterface"
   :columns = "columns"
   >
 
   </vlp-list>
-
+   <Tabbar v-model="active"></Tabbar>
+   <vlp-search
+   class="search-class"
+   v-model="searchValue"
+   :tipInterface="searchListInterface"
+   :displayVisible.sync="visible"
+   @search="searchFun"></vlp-search>
 </div>
 
 </template>
 <script>
-import { VlpList } from 'vant-plus'
+import { VlpList, VlpSearch } from 'vant-plus'
 import { NavBar, Icon, Row, Sticky } from 'vant'
-import { searchListObj } from '@/api/listPage.js'
+import { ListObj, searchList } from '@/api/listPage.js'
 import { cardLabel } from './common/labelClumns.js'
+import Tabbar from '@/components/tabbar'
 export default {
   name: 'WorkOrders',
   components: {
-    'vlp-list': VlpList,
+    VlpList,
+    VlpSearch,
+    Tabbar,
     [NavBar.name]: NavBar,
     [Icon.name]: Icon,
     [Row.name]: Row,
@@ -37,8 +46,17 @@ export default {
   },
   data() {
     return {
-      searchList: searchListObj,
-      columns: cardLabel
+      active: 1,
+      listInterface: ListObj,
+      searchListInterface: searchList,
+      columns: cardLabel,
+      searchValue: '',
+      visible: false
+    }
+  },
+  methods: {
+    searchFun(v) {
+      console.log('searchFun...', v)
     }
   }
 }

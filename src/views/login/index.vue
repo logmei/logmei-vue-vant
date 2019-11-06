@@ -105,6 +105,7 @@ export default {
     line-height: 1.2rem;
     font-size: 0.48rem;
     font-weight: 400;
+    padding-top: 20px;
   }
   .forgetPwd{
     color: #949496;
