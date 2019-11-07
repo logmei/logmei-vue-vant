@@ -25,6 +25,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import Detail from '../detail/index.vue'
 import { InitCardInfo } from '@/utils/handleListInfo.js'
 /**
@@ -57,14 +58,19 @@ export default {
       data: {}
     }
   },
+  computed: {
+    ...mapGetters([
+      'identity'
+    ])
+  },
   watch: {
     cardData: function() {
-      this.data = InitCardInfo(this.labelColumns, this.cardData)
+      this.initDatas()
       console.log('watch cardData...', this.data)
     }
   },
   beforeMount() {
-    this.data = InitCardInfo(this.labelColumns, this.cardData)
+    this.initDatas()
     console.log('beforeMount cardData...', this.data)
   },
   methods: {
@@ -72,6 +78,9 @@ export default {
       console.log('buttonClick...')
       this.$router.push({ path: '/HelloWorld', params: { id: 123 }})
       // obj.callback && obj.callback(this)
+    },
+    initDatas() {
+      this.data = InitCardInfo(this.labelColumns, this.cardData)
     }
   }
 
@@ -115,7 +124,7 @@ export default {
     }
     .subtitle{
         font-size: 0.2rem;
-        background: #378eb9;
+        background: #4d9c85;
         color: #ffffff;
         border-radius: 0.08rem;
         padding: 0.05rem 0.2rem;

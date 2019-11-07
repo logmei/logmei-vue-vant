@@ -14,6 +14,7 @@ function initOtherKeys(Data, info, key) {
     }
   })
 }
+
 /**
  * 初始化列表数据
  * LabelArray：模板数据结构  DTO：后端返回数据, old:是否使用原来labelArray对象

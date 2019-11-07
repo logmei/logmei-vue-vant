@@ -15,6 +15,14 @@
   :interface-fun="listInterface"
   :columns = "columns"
   >
+  <template v-slot="list">
+     <Card
+      v-for="(item,index) in list"
+      :key="index"
+      :card-data="item"
+      :label-columns='columns'>
+    </Card>
+  </template>
 
   </vlp-list>
    <Tabbar v-model="active"></Tabbar>
@@ -23,6 +31,7 @@
    v-model="searchValue"
    :tipInterface="searchListInterface"
    :displayVisible.sync="visible"
+   :historyList="historyList"
    @search="searchFun"></vlp-search>
 </div>
 
@@ -33,6 +42,7 @@ import { NavBar, Icon, Row, Sticky } from 'vant'
 import { ListObj, searchList } from '@/api/listPage.js'
 import { cardLabel } from './common/labelClumns.js'
 import Tabbar from '@/components/tabbar'
+import Card from '@/components/card'
 export default {
   name: 'WorkOrders',
   components: {
@@ -42,7 +52,8 @@ export default {
     [NavBar.name]: NavBar,
     [Icon.name]: Icon,
     [Row.name]: Row,
-    [Sticky.name]: Sticky
+    [Sticky.name]: Sticky,
+    Card
   },
   data() {
     return {
@@ -51,7 +62,8 @@ export default {
       searchListInterface: searchList,
       columns: cardLabel,
       searchValue: '',
-      visible: false
+      visible: false,
+      historyList: ['中国', '英国', '大盘鸡']
     }
   },
   methods: {
