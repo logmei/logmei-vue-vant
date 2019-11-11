@@ -76,7 +76,7 @@ export default {
   methods: {
     buttonClick(obj) {
       console.log('buttonClick...')
-      this.$router.push({ path: '/HelloWorld', params: { id: 123 }})
+      obj.callback.call(this, { guid: '12345' })
       // obj.callback && obj.callback(this)
     },
     initDatas() {

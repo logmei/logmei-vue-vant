@@ -12,14 +12,16 @@ const cardLabel = [
   },
   { alias: 'buttons',
     list: [
-      { label: '去预约',
-        callback: (context) => {
-          context.$router.push({ path: '/HelloWorld', params: { id: 123 }})
+      { label: '去美容',
+        callback(params) {
+          console.log('去美容', this, params)
+          this.$router.push({ path: '/HelloWorld', params: params })
         }
       },
-      { label: '重新派单',
-        callback: (context) => {
-          context.$router.push({ path: '/HelloWorld', params: { id: 555 }})
+      { label: '去图书馆',
+        callback(params) {
+          console.log('去图书馆', this, params)
+          this.$router.push({ path: '/HelloWorld', params: params })
         }
       }
     ] }
