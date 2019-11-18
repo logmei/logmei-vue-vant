@@ -7,7 +7,7 @@
   left-arrow
 
 >
-  <van-icon name="search" slot="right" @click="visible=true"/>
+  <van-icon name="search" slot="right" @click="searchPage"/>
 </van-nav-bar>
 </van-sticky>
 
@@ -26,18 +26,18 @@
 
   </vlp-list>
    <Tabbar v-model="active"></Tabbar>
-   <vlp-search
+   <!-- <vlp-search
    class="search-class"
    v-model="searchValue"
    :tipInterface="searchListInterface"
    :displayVisible.sync="visible"
    :historyList="historyList"
-   @search="searchFun"></vlp-search>
+   @search="searchFun"></vlp-search> -->
 </div>
 
 </template>
 <script>
-import { VlpList, VlpSearch } from 'vant-plus'
+import { VlpList } from 'vant-plus'
 import { NavBar, Icon, Row, Sticky } from 'vant'
 import { ListObj, searchList } from '@/api/listPage.js'
 import { cardLabel } from './common/labelClumns.js'
@@ -47,7 +47,7 @@ export default {
   name: 'WorkOrders',
   components: {
     VlpList,
-    VlpSearch,
+    // VlpSearch,
     Tabbar,
     [NavBar.name]: NavBar,
     [Icon.name]: Icon,
@@ -69,6 +69,9 @@ export default {
   methods: {
     searchFun(v) {
       console.log('searchFun...', v)
+    },
+    searchPage() {
+      this.$router.push({ path: 'searchPage' })
     }
   }
 }

@@ -20,6 +20,11 @@ export const constantRoutes = [
     component: () => import('@/views/work-orders')
   },
   {
+    path: '/searchPage',
+    name: 'SearchPage',
+    component: () => import('@/views/work-orders/search-page')
+  },
+  {
     path: '/auth-redirect',
     component: () => import('@/views/login/auth-redirect'),
     hidden: true
